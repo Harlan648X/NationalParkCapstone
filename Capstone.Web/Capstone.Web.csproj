@@ -140,6 +140,7 @@
     </Compile>
     <Compile Include="DAL\ParkListSqlDAL.cs" />
     <Compile Include="Models\ParkListModel.cs" />
+    <Compile Include="Models\WeatherDayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
