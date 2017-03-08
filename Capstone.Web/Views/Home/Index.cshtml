@@ -7,9 +7,19 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>National Parks</h2>
+<h1>National Parks</h1>
 
-@foreach (var park in Model)
-{
-    <img src="~/Content/img/parks/@(park.ParkCode).jpg" />
-}
+    @foreach (var park in Model)
+    {
+        <div id="index_individualPark">
+
+            @*<a href="/Home/ParkDetail/@park.ParkCode"> --------Why did this not work*@
+
+            <a href="@Url.Action("ParkDetail", "Home", new { id = park.ParkCode })">
+                <img id="index_parkImage" src="~/Content/img/parks/@(park.ParkCode).jpg" />
+            </a>
+            <h3 id="index_parkName">@park.ParkName <span style="color:darkgrey">Located in: @park.State</span></h3>
+            <p id="index_parkDesc">@park.ParkDescription</p>
+
+        </div>
+    }

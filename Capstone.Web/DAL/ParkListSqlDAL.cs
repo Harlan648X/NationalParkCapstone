@@ -8,10 +8,11 @@ using Capstone.Web.DAL;
 
 namespace Capstone.Web.Models
 {
-    public class ParkListSqlDAL: IParkListDAL
+    public class ParkListSqlDAL : IParkListDAL
     {
         private string connectionString;
         private const string SQL_GetAllParks = @"Select parkCode, parkName, state, parkDescription from park;";
+        private const string SQL_GetPark = @"select * from park where parkCode = @parkCode;";
 
         public ParkListSqlDAL(string connectionString)
         {
@@ -55,6 +56,67 @@ namespace Capstone.Web.Models
             {
                 throw;
             }
+        }
+
+        public ParkListModel GetPark(string parkCode)
+        {
+            ParkListModel output = new ParkListModel();
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    SqlCommand cmd = new SqlCommand(SQL_GetPark, connection);
+
+                    cmd.Parameters.AddWithValue("@parkCode", parkCode);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        string pCode = Convert.ToString(reader["parkCode"]);
+                        string parkName = Convert.ToString(reader["parkName"]);
+                        string state = Convert.ToString(reader["state"]);
+                        string parkDescription = Convert.ToString(reader["parkDescription"]);
+                        int acreage = Convert.ToInt32(reader["acreage"]);
+                        int elevation = Convert.ToInt32(reader["elevationInFeet"]);
+                        int milesOfTrail = Convert.ToInt32(reader["milesOfTrail"]);
+                        int numberOfCampsites = Convert.ToInt32(reader["numberOfCampsites"]);
+                        int yearFounded = Convert.ToInt32(reader["yearFounded"]);
+                        int annualVisitorCount = Convert.ToInt32(reader["annualVisitorCount"]);
+                        string inspirationalQuote = Convert.ToString(reader["inspirationalQuote"]);
+                        string inspirationalQuoteSource = Convert.ToString(reader["inspirationalQuoteSource"]);
+                        int entryFee = Convert.ToInt32(reader["entryFee"]);
+                        int numberOfAnimalSpecies = Convert.ToInt32(reader["numberOfAnimalSpecies"]);
+                        string climate = Convert.ToString(reader["climate"]);
+
+                        output.ParkCode = pCode;
+                        output.ParkName = parkName;
+                        output.State = state;
+                        output.ParkDescription = parkDescription;
+                        output.Acreage = acreage;
+                        output.Elevation = elevation;
+                        output.MilesOfTrail = milesOfTrail;
+                        output.NumberOfCampsites = numberOfCampsites;
+                        output.YearFounded = yearFounded;
+                        output.AnnualVisitorCount = annualVisitorCount;
+                        output.InspirationalQuote = inspirationalQuote;
+                        output.InspirationalQuoteSource = inspirationalQuoteSource;
+                        output.EntryFee = entryFee;
+                        output.NumberOfAnimalSpecies = numberOfAnimalSpecies;
+                        output.Climate = climate;
+                    }
+                    return output;
+                }
+            }
+
+            catch (SqlException ex)
+            {
+                throw;
+            }
+
+
         }
     }
 }

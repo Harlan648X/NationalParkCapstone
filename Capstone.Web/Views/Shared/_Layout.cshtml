@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>National Park Weather Service Geek</title>
-    @*--<link rel="stylesheet" href="~/Content/solarsystemgeek.css">*@
+    <link rel="stylesheet" href="~/Content/npgeekstyle.css">
 </head>
 
 <body>
@@ -16,14 +16,16 @@
         <p> Here we can put some text</p>
     </header>
     <nav>
-        <h2>List of Parks/h2>
+        <h2>List of Parks</h2>
         <p> </p>
         <ul>
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>  
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
         </ul>
     </nav>
+    <section id="main-content">
+        @RenderBody()
+    </section>
 
-    @RenderBody()
 
 </body>
 </html>
