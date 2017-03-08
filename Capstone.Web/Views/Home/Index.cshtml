@@ -1,0 +1,15 @@
+﻿@using Capstone.Web.Models
+
+@model List<ParkListModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>National Parks</h2>
+
+@foreach (var park in Model)
+{
+    <img src="~/Content/img/parks/@(park.ParkCode).jpg" />
+}

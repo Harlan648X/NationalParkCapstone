@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>National Park Weather Service Geek</title>
+    @*--<link rel="stylesheet" href="~/Content/solarsystemgeek.css">*@
+</head>
+
+<body>
+    <header>
+        <img src="~/Content/img/geek.png" alt="National Park Geek" />
+        <h1>National Park Weather Services</h1>
+        <p> Here we can put some text</p>
+    </header>
+    <nav>
+        <h2>List of Parks/h2>
+        <p> </p>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>  
+        </ul>
+    </nav>
+
+    @RenderBody()
+
+</body>
+</html>
