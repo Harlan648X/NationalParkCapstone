@@ -36,5 +36,8 @@ namespace Capstone.Web.Models
         public int NumberOfAnimalSpecies { get; set; }
 
         public string Climate { get; set; }
+
+        public char Unit { get; set; }
+
     }
 }

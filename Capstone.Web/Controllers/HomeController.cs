@@ -22,6 +22,11 @@ namespace Capstone.Web.Controllers
 
         public ActionResult Index()
         {
+            if (Session["whatUnit"] == null)
+            {
+                Session["whatUnit"] = new WeatherDayModel();
+            }
+
             return View("Index", parkDal.GetAllParks());
         }
 

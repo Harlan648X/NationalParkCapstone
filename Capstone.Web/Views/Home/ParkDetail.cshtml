@@ -68,13 +68,13 @@
 </table>
 
 @using (Html.BeginForm("Weather", "Weather", FormMethod.Post))
-{ v
+{ 
     <div class="formInputGroup">
         @Html.Hidden("id",@Model.ParkCode)
         @Html.Label("Unit", "Fahrenheit")
-        @Html.RadioButton("Unit", 'F', true)
+        @Html.RadioButton("Unit", 'F',@Model.Unit=='F' )
         @Html.Label("Unit","Celcius")
-        @Html.RadioButton("Unit", 'C') 
+        @Html.RadioButton("Unit", 'C', @Model.Unit == 'C') 
     </div>
     <button class="formSubmitButton">5-Day Forecast</button>
 }
