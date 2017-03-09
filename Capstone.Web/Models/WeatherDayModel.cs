@@ -9,7 +9,7 @@ namespace Capstone.Web.Models
     {
         public string ParkCode { get; set; }
 
-        public int Day { get; set; }
+        public string Day { get; set; }
 
         public int High { get; set; }
 
@@ -17,5 +17,15 @@ namespace Capstone.Web.Models
 
         public string Forecast { get; set; }
 
+        public double ConvertC(int tempInF)
+        {
+            double result;
+
+            result = ((double)tempInF - 32) * (5 / 9);
+
+            return result;
+        }
+
     }
+
 }

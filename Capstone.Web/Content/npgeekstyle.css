@@ -231,3 +231,23 @@ section.centeredPanel h2 {
     text-align:center;
     color:black;
 }
+
+#weather_individualDay{
+    display:table-cell;
+    vertical-align:top;
+    border:solid;
+    border-color:darkgrey;
+    height:100%;
+            width:20%;
+
+}
+
+#weather_day{
+font-weight:bolder;
+font-size:25px;
+text-align:center;
+}
+
+#weather_container{
+display:table;
+}

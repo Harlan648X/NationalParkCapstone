@@ -1,0 +1,55 @@
+﻿@using Capstone.Web.Models
+
+@model List<WeatherDayModel>
+
+@{
+    ViewBag.Title = "Weather";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 id="detail_header">5 Day Forecast</h1>
+<div id="weather_container">
+    @foreach (var day in Model)
+    {
+        <div id="weather_individualDay">
+            <p id="weather_day"> @day.Day</p>
+            <img id="weather_Dayimage" src="~/Content/img/weather/@(day.Forecast.Replace(" ","")).png" />
+            <p>Forecast: @day.Forecast</p>
+            <p>High of: @day.High  Low of: @day.Low</p>
+
+            @if (day.Forecast == "snow")
+            {
+                <p>֎ Pack Snowshoes</p>
+            }
+            @if (day.Forecast == "rain")
+            {
+                <p>֎ Pack rain gear and wear waterproof shoes</p>
+            }
+            @if (day.Forecast == "thunderstorms")
+            {
+                <p>֎ Seek shelter and avoid hiking on exposed ridges</p>
+            }
+            @if (day.Forecast == "sunny")
+            {
+                <p>֎ Pack Sunblock</p>
+            }
+            @if (day.High > 75)
+            {
+                <p>֎ Bring an extra gallon of water</p>
+            }
+            @if ((day.High - day.Low) > 20)
+            {
+                <p>֎ wear breathable layers</p>
+            }
+            @if (day.Low < 20)
+            {
+                <p>֎ Warning!!! Frosbite Possible!!</p>
+            }
+
+        </div>
+    }
+</div>
+
+
+
+
