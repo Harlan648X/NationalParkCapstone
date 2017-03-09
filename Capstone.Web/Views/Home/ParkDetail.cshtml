@@ -69,6 +69,8 @@
 
 @using (Html.BeginForm("Weather", "Weather", FormMethod.Post))
 { 
+    <button class="formSubmitButton">5-Day Forecast</button>
+
     <div class="formInputGroup">
         @Html.Hidden("id",@Model.ParkCode)
         @Html.Label("Unit", "Fahrenheit")
@@ -76,8 +78,5 @@
         @Html.Label("Unit","Celcius")
         @Html.RadioButton("Unit", 'C', @Model.Unit == 'C') 
     </div>
-    <button class="formSubmitButton">5-Day Forecast</button>
+    
 }
-
-
-<a href="@Url.Action("Weather", "Weather", new { id = @Model.ParkCode })">Click Here For Weather</a>

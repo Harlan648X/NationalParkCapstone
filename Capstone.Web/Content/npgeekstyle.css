@@ -232,7 +232,7 @@ section.centeredPanel h2 {
     color:black;
 }
 
-#weather_individualDay{
+weather_individualDay{
     display:table-cell;
     vertical-align:top;
     border:solid;
@@ -250,4 +250,25 @@ text-align:center;
 
 #weather_container{
 display:table;
+}
+
+.formSubmitButton
+{
+    background-color:lightgreen;
+    font-size: 20px;
+    font-weight:bold;
+    padding: 1px 16px;
+    border-radius:12px;
+    width:250px;
+   margin-left:35%;
+   margin-top:2%;
+ 
+}
+
+.formInputGroup
+{
+    padding-left:28%;
+    width:250px;
+    font-weight:bold;  
+    text-align:right;
 }

@@ -19,40 +19,40 @@
 
             @if (day.Unit == 'C')
             {
-                <p>High of: @day.ConvertC(day.High)  Low of:@day.ConvertC(day.Low)</p>
+                <p class="forecast"> High of: @day.ConvertC(day.High)  Low of:@day.ConvertC(day.Low)</p>
             }
             else
             {
-                <p>High of: @day.High  Low of: @day.Low</p>
+                <p class="forecast"> High of: @day.High  Low of: @day.Low</p>
             }
 
             @if (day.Forecast == "snow")
             {
-                <p>֎ Pack Snowshoes</p>
+                <p class="weatherAdvice"> ֎ Pack Snowshoes</p>
             }
             @if (day.Forecast == "rain")
             {
-                <p>֎ Pack rain gear and wear waterproof shoes</p>
+                <p class="weatherAdvice"> ֎ Pack rain gear and wear waterproof shoes</p>
             }
             @if (day.Forecast == "thunderstorms")
             {
-                <p>֎ Seek shelter and avoid hiking on exposed ridges</p>
+                <p class="weatherAdvice"> ֎ Seek shelter and avoid hiking on exposed ridges</p>
             }
             @if (day.Forecast == "sunny")
             {
-                <p>֎ Pack Sunblock</p>
+                <p class="weatherAdvice"> ֎ Pack Sunblock</p>
             }
             @if (day.High > 75)
             {
-                <p>֎ Bring an extra gallon of water</p>
+                <p class="weatherAdvice"> ֎ Bring an extra gallon of water</p>
             }
             @if ((day.High - day.Low) > 20)
             {
-                <p>֎ wear breathable layers</p>
+                <p class="weatherAdvice"> ֎ wear breathable layers</p>
             }
             @if (day.Low < 20)
             {
-                <p>֎ Warning!!! Frosbite Possible!!</p>
+                <p class="weatherAdvice"> ֎ Warning!!! Frosbite Possible!!</p>
             }
 
         </div>
