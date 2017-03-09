@@ -232,14 +232,14 @@ section.centeredPanel h2 {
     color:black;
 }
 
-weather_individualDay{
+#weather_individualDay{
     display:table-cell;
     vertical-align:top;
     border:solid;
     border-color:darkgrey;
-    height:100%;
-    width:400px;
-
+    height:auto;
+    width:500px;
+    padding-bottom:10px
 }
 
 #weather_day{
@@ -250,6 +250,7 @@ text-align:center;
 
 #weather_container{
 display:table;
+width:100%;
 }
 
 .formSubmitButton
@@ -271,4 +272,14 @@ display:table;
     width:250px;
     font-weight:bold;  
     text-align:right;
+}
+#weather_Dayimage{
+    width:50%;
+    height:auto;
+    align-self:center;
+    margin-right:auto;
+    margin-left:auto;
+}
+#topForcast{
+    font-size:18px !important;
 }

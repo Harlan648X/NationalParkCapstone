@@ -23,7 +23,7 @@ namespace Capstone.Web.Models
         {
             double result;
 
-            result = Math.Round(((double)tempInF - 32.00) * (5.00 / 9.00),2);
+            result = Math.Round(((double)tempInF - 32.00) * (5.00 / 9.00), 2);
 
             return result;
         }

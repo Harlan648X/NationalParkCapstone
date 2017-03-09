@@ -5,6 +5,9 @@ using System.Web;
 using Capstone.Web.Models;
 using System.Data.SqlClient;
 using Capstone.Web.DAL;
+using System.Web.Mvc;
+using System.Configuration;
+
 
 namespace Capstone.Web.Models
 {
@@ -58,7 +61,7 @@ namespace Capstone.Web.Models
             }
         }
 
-        public ParkListModel GetPark(string parkCode)
+        public ParkListModel GetPark(string parkCode, char unit)
         {
             ParkListModel output = new ParkListModel();
 
@@ -106,6 +109,7 @@ namespace Capstone.Web.Models
                         output.EntryFee = entryFee;
                         output.NumberOfAnimalSpecies = numberOfAnimalSpecies;
                         output.Climate = climate;
+                        output.Unit = unit; //assign the unit passed in from Home Controller
                     }
                     return output;
                 }

@@ -22,7 +22,7 @@ namespace Capstone.Web.Controllers
 
         public ActionResult Weather(string id, char unit)
         {
-            WeatherDayModel existingSession = Session["whatUnit"] as WeatherDayModel;
+            ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
             existingSession.Unit = unit;
 
             return View("Weather", weatherDal.GetWeather(id, existingSession.Unit));

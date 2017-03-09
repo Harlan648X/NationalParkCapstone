@@ -21,18 +21,22 @@ namespace Capstone.Web.Controllers
         //GET: Home
 
         public ActionResult Index()
-        {
+        {//if no session exists create one and set the initial unit to F
             if (Session["whatUnit"] == null)
             {
-                Session["whatUnit"] = new WeatherDayModel();
+                Session["whatUnit"] = new ParkListModel();
+                ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
+                existingSession.Unit = 'F';
             }
-
             return View("Index", parkDal.GetAllParks());
         }
 
         public ActionResult ParkDetail(string id)
-        {       
-            return View("ParkDetail", parkDal.GetPark(id));
+        {//create an object from session and use its Unit property to pass to the GetPark method of ParkListSqlDAL
+            ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
+
+
+            return View("ParkDetail", parkDal.GetPark(id, existingSession.Unit));
         }
     }
 }
