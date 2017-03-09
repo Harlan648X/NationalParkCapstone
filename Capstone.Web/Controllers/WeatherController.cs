@@ -20,10 +20,9 @@ namespace Capstone.Web.Controllers
 
         //GET: Home
 
-        public ActionResult Weather(string id)
+        public ActionResult Weather(string id, char unit)
         {
-            return View("Weather", weatherDal.GetWeather(id));
+            return View("Weather", weatherDal.GetWeather(id, unit));
         }
-
     }
 }

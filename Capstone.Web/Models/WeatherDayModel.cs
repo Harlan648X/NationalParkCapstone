@@ -17,11 +17,13 @@ namespace Capstone.Web.Models
 
         public string Forecast { get; set; }
 
+        public char Unit { get; set; }
+
         public double ConvertC(int tempInF)
         {
             double result;
 
-            result = ((double)tempInF - 32) * (5 / 9);
+            result = Math.Round(((double)tempInF - 32.00) * (5.00 / 9.00),2);
 
             return result;
         }

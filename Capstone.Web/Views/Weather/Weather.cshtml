@@ -7,6 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h1 id="detail_header">5 Day Forecast</h1>
 <div id="weather_container">
     @foreach (var day in Model)
@@ -15,7 +16,15 @@
             <p id="weather_day"> @day.Day</p>
             <img id="weather_Dayimage" src="~/Content/img/weather/@(day.Forecast.Replace(" ","")).png" />
             <p>Forecast: @day.Forecast</p>
-            <p>High of: @day.High  Low of: @day.Low</p>
+
+            @if (day.Unit == 'C')
+            {
+                <p>High of: @day.ConvertC(day.High)  Low of:@day.ConvertC(day.Low)</p>
+            }
+            else
+            {
+                <p>High of: @day.High  Low of: @day.Low</p>
+            }
 
             @if (day.Forecast == "snow")
             {

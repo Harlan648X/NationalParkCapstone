@@ -9,6 +9,6 @@ namespace Capstone.Web.DAL
 {
     public interface IWeatherDAL
     {
-        List<WeatherDayModel> GetWeather(string id);
+        List<WeatherDayModel> GetWeather(string id, char unit);
     }
 }

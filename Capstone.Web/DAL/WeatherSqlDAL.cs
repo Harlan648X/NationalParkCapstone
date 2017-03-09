@@ -18,7 +18,7 @@ namespace Capstone.Web.Models
             this.connectionString = connectionString;
         }
 
-        public List<WeatherDayModel> GetWeather(string id)
+        public List<WeatherDayModel> GetWeather(string id, char unit)
         {
             List<WeatherDayModel> output = new List<WeatherDayModel>();
 
@@ -48,6 +48,7 @@ namespace Capstone.Web.Models
                         dayModel.Low = low;
                         dayModel.High = high;
                         dayModel.Forecast = forecast;
+                        dayModel.Unit = unit;
 
                         output.Add(dayModel);
                     }
