@@ -22,6 +22,7 @@ namespace Capstone.Web.Controllers
 
         public ActionResult Index()
         {//if no session exists create one and set the initial unit to F
+
             if (Session["whatUnit"] == null)
             {
                 Session["whatUnit"] = new ParkListModel();

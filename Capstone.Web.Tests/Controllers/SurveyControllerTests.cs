@@ -12,24 +12,22 @@ using Capstone.Web.Models;
 namespace Capstone.Web.Controllers.Tests
 {
     [TestClass()]
-    public class HomeControllerTests
+    public class SurveyControllerTests
     {
         [TestMethod()]
-        public void HomeController_IndexAction_ReturnIndexView()
+        public void SurveyController_SubmitAction_ReturnSubmitView()
         {
             //string conn = @"Data Source=.\SQLEXPRESS;Initial Catalog=npgeek;User ID=te_student;Password=sqlserver1";
             //Arrange
-
             //ParkListSqlDAL parkDal = new ParkListSqlDAL(conn);
-
-            //HomeController controller = new HomeController(null);
+            SurveyController controller = new SurveyController(null);
 
             //Act
-            //ViewResult result = controller.Index() as ViewResult;
+            ViewResult result = controller.Submit() as ViewResult;
                   
             //Assert
             
-            //Assert.AreEqual("Index", result.ViewName);
+            Assert.AreEqual("Submit", result.ViewName);
         }
     }
 }

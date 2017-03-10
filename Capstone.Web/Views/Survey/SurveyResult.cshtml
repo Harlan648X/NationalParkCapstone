@@ -1,0 +1,12 @@
+﻿@using Capstone.Web.Models
+
+@model SurveyModel
+
+@{
+    ViewBag.Title = "Survey Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p id="result_winner">Winner of Favorite Park Survey is: <span id="result_name_span">@Model.ParkName</span></p>
+<p></p>
+<img id="surveyResult_parkImage" src="~/Content/img/parks/@(Model.ParkCode).jpg" />

@@ -158,6 +158,7 @@
     <Content Include="Views\Home\ParkDetail.cshtml" />
     <Content Include="Views\Weather\Weather.cshtml" />
     <Content Include="Views\Survey\Submit.cshtml" />
+    <Content Include="Views\Survey\SurveyResult.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

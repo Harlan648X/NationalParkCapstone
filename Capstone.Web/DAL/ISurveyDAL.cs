@@ -9,5 +9,6 @@ namespace Capstone.Web.DAL
     public interface ISurveyDAL
     {
         bool SaveSurvey(SurveyModel newSurvey);
+        SurveyModel GetSurvey();
     }
 }

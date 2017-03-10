@@ -9,26 +9,32 @@
 
 @using (Html.BeginForm("Submit", "Survey", FormMethod.Post))
 {
-    <div>
-        @Html.DropDownListFor(m => m.ParkCode,
-                new SelectList(Enum.GetValues(typeof(ParkCode))),
-                "Select ParkCode")
-    </div>
-
-    <div>
-        @Html.DropDownListFor(m => m.State,
+    <div id="submit_container">
+        <div id="submit_parkCode">
+            @Html.DropDownListFor(m => m.ParkCode, SurveyModel.ParkCodes)
+            @Html.ValidationMessageFor(m => m.ParkCode)
+        </div>
+        <div id="submit_state" >
+            @Html.DropDownListFor(m => m.State,
                 new SelectList(Enum.GetValues(typeof(State))),
                 "Select State")
-    </div>
-    <div>
-        @Html.DropDownListFor(m => m.ActivityLevel,
-             new SelectList(Enum.GetValues(typeof(ActivityLevel))),
-             "Select Activity Level")
-    </div>
+            @Html.ValidationMessageFor(m => m.State)
+        </div>
+        <div id="submit_activity">
+            @Html.DropDownListFor(m => m.ActivityLevel, SurveyModel.ActivityLevels)
+            @Html.ValidationMessageFor(m => m.ActivityLevel)
+        </div>
+        <div>
+            @Html.Label("EmailAddress", "E-mail Address: ")
+            @Html.TextBoxFor(m => m.EmailAddress)
+            @Html.ValidationMessageFor(m => m.EmailAddress)
+        </div>
 
-
-    <div>
-        @Html.Label("EmailAddress", "E-mail Address: ")
-        @Html.TextBoxFor(m => m.EmailAddress)
+        <button class="formSubmitButton">Submit Survey</button>
     </div>
 }
+
+@*@Html.DropDownListFor(m => m.ParkCode,
+                new SelectList(Enum.GetValues(typeof(ParkCode))),
+                "Select ParkCode")
+@Html.ValidationMessageFor(m => m.ParkCode)*@

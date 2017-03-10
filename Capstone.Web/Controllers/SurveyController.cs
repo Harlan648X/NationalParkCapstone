@@ -28,9 +28,20 @@ namespace Capstone.Web.Controllers
         public ActionResult Submit(SurveyModel newSurvey)
         {
 
+            if (!ModelState.IsValid)
+            {
+                return View("Submit");
+            }
+
             surveyDal.SaveSurvey(newSurvey);
 
-          return RedirectToAction("SurveyResult");
+
+            return RedirectToAction("SurveyResult");
+        }
+
+        public ActionResult SurveyResult()
+        {
+            return View("SurveyResult", surveyDal.GetSurvey());
         }
     }
 }

@@ -5,7 +5,7 @@
 
 
 header {
-    margin: 25px;
+    margin-left: 25px;
 }
 
     header h1 {
@@ -20,10 +20,11 @@ header {
 
     header img {
         height: 110px;
+        margin:auto;
     }
 
 nav {
-    margin-top: 50px;
+    margin-top:auto;
     margin-bottom: 50px;
 }
 
@@ -40,10 +41,12 @@ nav {
     }
 
 ul {
+    margin-top:auto;
     padding-left: 80px;
 }
 
 li {
+    margin-top:auto;
     padding-bottom: 4px;
 }
 
@@ -276,10 +279,55 @@ width:100%;
 #weather_Dayimage{
     width:50%;
     height:auto;
-    align-self:center;
+    align-self:center !important;
     margin-right:auto;
-    margin-left:auto;
+    margin-left:20%;
 }
 #topForcast{
     font-size:18px !important;
+    text-align:center;
 }
+
+#result_winner{
+    text-align:center;
+    margin:auto;
+    font-size:29px !important;
+}
+
+#surveyResult_parkImage{
+    display:block;
+    margin:auto;
+    border-radius:50%;
+    width:50%
+}
+#result_name_span{
+    font-weight:bold;
+}
+
+span.field-validation-error {
+    color: red;
+    font-weight: bold;
+    font-size:30px;
+}
+
+#submit_container{
+    background-color:antiquewhite;
+    position:absolute;
+    left:25%;
+    /*align-self:center;*/
+    display:block;
+    margin:auto;
+    max-width:50%;
+    height:30%;
+}
+
+    #submit_container div {
+        display:inline-block;
+        text-align:right;
+        margin:auto;
+       
+    }
+
+    #submit_parkCode{
+        margin-left:20% !important;
+    }

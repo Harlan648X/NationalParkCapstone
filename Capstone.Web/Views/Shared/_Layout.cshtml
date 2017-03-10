@@ -14,10 +14,12 @@
         <img src="~/Content/img/logo.png" alt="National Park Geek logo" />
     </header>
     <nav>
-        <h2> Park Weather and Info</h2>
-        <p> </p>
+        @*<h2> Park Weather and Info</h2>*@
+        @*<p> </p>*@
         <ul>
             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Take Survey", "Submit", "Survey")</li>
+            <li>@Html.ActionLink("Survey Result", "SurveyResult", "Survey")</li>
         </ul>
     </nav>
     <section id="main-content">
