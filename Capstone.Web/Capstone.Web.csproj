@@ -133,16 +133,20 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\SurveyController.cs" />
     <Compile Include="Controllers\WeatherController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DAL\ISurveyDAL.cs" />
     <Compile Include="DAL\IWeatherDAL .cs" />
     <Compile Include="DAL\IParkListDAL.cs" />
+    <Compile Include="DAL\SurveySqlDAL.cs" />
     <Compile Include="DAL\WeatherSqlDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="DAL\ParkListSqlDAL.cs" />
     <Compile Include="Models\ParkListModel.cs" />
+    <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Models\WeatherDayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +157,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ParkDetail.cshtml" />
     <Content Include="Views\Weather\Weather.cshtml" />
+    <Content Include="Views\Survey\Submit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
