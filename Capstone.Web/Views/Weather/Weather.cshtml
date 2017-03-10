@@ -15,7 +15,7 @@
         <div id="weather_individualDay">
             <p id="weather_day"> @day.Day</p>
             <img id="weather_Dayimage" src="~/Content/img/weather/@(day.Forecast.Replace(" ","")).png" />
-            <p id="topForcast">Forecast: @day.Forecast</p>
+            <p id="topForcast">@day.Forecast</p>
 
             @if (day.Unit == 'C')
             {
