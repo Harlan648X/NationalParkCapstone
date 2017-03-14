@@ -64,7 +64,7 @@ namespace Capstone.Web.Models
         public ParkListModel GetPark(string parkCode, char unit)
         {
             ParkListModel output = new ParkListModel();
-
+            // output = null;
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -77,7 +77,7 @@ namespace Capstone.Web.Models
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     while (reader.Read())
-                    {
+                    { //output = new ParkListModel
                         string pCode = Convert.ToString(reader["parkCode"]);
                         string parkName = Convert.ToString(reader["parkName"]);
                         string state = Convert.ToString(reader["state"]);

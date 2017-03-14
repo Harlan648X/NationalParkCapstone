@@ -25,9 +25,9 @@ namespace Capstone.Web.Controllers
 
             if (Session["whatUnit"] == null)
             {
-                Session["whatUnit"] = new ParkListModel();
+                Session["whatUnit"] = new ParkListModel(); //session ["whatUnit"] = 'f'
                 ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
-                existingSession.Unit = 'F';
+                existingSession.Unit = 'F'; 
             }
             return View("Index", parkDal.GetAllParks());
         }
@@ -35,9 +35,9 @@ namespace Capstone.Web.Controllers
         public ActionResult ParkDetail(string id)
         {//create an object from session and use its Unit property to pass to the GetPark method of ParkListSqlDAL
             ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
-
+            // char whatUnit = Session["whatUnit] as char;
 
             return View("ParkDetail", parkDal.GetPark(id, existingSession.Unit));
-        }
+        }                             //parkDal.GetPark(id, whatUnit);
     }
 }

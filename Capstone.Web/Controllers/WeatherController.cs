@@ -19,13 +19,20 @@ namespace Capstone.Web.Controllers
         }
 
         //GET: Home
-
+        
         public ActionResult Weather(string id, char unit)
         {
             ParkListModel existingSession = Session["whatUnit"] as ParkListModel;
             existingSession.Unit = unit;
 
-            return View("Weather", weatherDal.GetWeather(id, existingSession.Unit));
+            List<WeatherDayModel> forecast = weatherDal.GetWeather(id, existingSession.Unit);
+
+            if(forecast == null || forecast.Count == 0)
+            {
+                return HttpNotFound();
+            }
+
+            return View("Weather", forecast);
         }
     }
 }
